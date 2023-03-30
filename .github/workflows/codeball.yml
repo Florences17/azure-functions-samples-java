@@ -7,15 +7,20 @@ on:
 jobs:
   codeball_job:
     runs-on: ubuntu-latest
-    permissions:
-      packages: write
     name: Codeball
     steps:
       - name: Codeball
-        uses: sturdy-dev/codeball-action@v2
+        uses: sturdy-dev/codeball-action@v2.6.0
         with:
           # For all configuration options see https://github.com/sturdy-dev/codeball-action/blob/v2/action.yml
           approvePullRequests: "true"
           labelPullRequestsWhenApproved: "true"
           labelPullRequestsWhenReviewNeeded: "false"
           failJobsWhenReviewNeeded: "false"
+        with:
+          name: codeball:approved
+          color: 86efac
+          remove-label-names: codeball:needs-review,codeball:needs-careful-review
+          codeball-job-id: 6854dd88-0b00-40f5-b2b0-73949bcc2f12
+          GITHUB_TOKEN: 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
+          description: Codeball
