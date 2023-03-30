@@ -17,3 +17,10 @@ jobs:
           labelPullRequestsWhenApproved: "true"
           labelPullRequestsWhenReviewNeeded: "false"
           failJobsWhenReviewNeeded: "false"
+        with:
+          name: codeball:approved
+          color: 86efac
+          remove-label-names: codeball:needs-review,codeball:needs-careful-review
+          codeball-job-id: 6854dd88-0b00-40f5-b2b0-73949bcc2f12
+          GITHUB_TOKEN: ***
+          description: Codeball
